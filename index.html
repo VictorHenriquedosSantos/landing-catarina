@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catarina Abdala - Inglês Jurídico</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Poppins:wght@400;700&display=swap');
+
+    :root {
+      --marrom-escuro: #370F1E;
+      --cinza-azulado: #9DA2BE;
+      --vermelho-terroso: #852C04;
+      --bege-claro: #F4EADB;
+    }
+
+    /* Reset básico */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bege-claro);
+      color: var(--marrom-escuro);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 1.5rem 1rem;
+    }
+
+    /* Header com menu */
+    header {
+      background-color: var(--marrom-escuro);
+      color: var(--bege-claro);
+      padding: 1rem 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 960px;
+      margin: auto;
+    }
+
+    nav .logo {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: var(--vermelho-terroso);
+    }
+
+    /* Menu hamburguer para mobile */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      width: 28px;
+      height: 22px;
+      justify-content: space-between;
+    }
+
+    .menu-toggle span {
+      display: block;
+      height: 3.5px;
+      background: var(--bege-claro);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--marrom-escuro) 40%, var(--vermelho-terroso) 100%);
+      color: var(--bege-claro);
+      padding: 4rem 1rem 6rem;
+      text-align: center;
+      border-radius: 0 0 60% 60% / 0 0 10% 10%;
+      margin-bottom: 3rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      font-weight: 600;
+      font-size: 1.3rem;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .hero a.cta-btn {
+      background-color: var(--bege-claro);
+      color: var(--marrom-escuro);
+      padding: 1rem 2.5rem;
+      font-weight: 700;
+      border-radius: 40px;
+      font-size: 1.25rem;
+      box-shadow: 0 6px 15px rgba(244, 234, 219, 0.8);
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    .hero a.cta-btn:hover {
+      background-color: var(--vermelho-terroso);
+      color: var(--bege-claro);
+      box-shadow: 0 8px 20px rgba(133, 44, 4, 0.9);
+    }
+
+    /* Sobre a professora */
+    .about {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .about img {
+      max-width: 320px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+      flex-shrink: 0;
+    }
+
+    .about-text {
+      flex: 1;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--marrom-escuro);
+      line-height: 1.5;
+    }
+
+    /* Benefícios */
+    .benefits {
+      background: var(--cinza-azulado);
+      color: white;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .benefits h2 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .benefits ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .benefits li {
+      background: var(--vermelho-terroso);
+      padding: 1.1rem 1rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+      transition: transform 0.2s ease;
+      cursor: default;
+    }
+
+    .benefits li:hover {
+      transform: scale(1.05);
+    }
+
+    a {
+      text-decoration: none;
+    }
+    .cta {
+      text-align: center;
+      padding: 5px 5px;
+      background-color: #9DA2BE;
+      color: white;
+      border-radius: 8px 8px 0px 0px;
+    }
+    .cta h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    .cta p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+    .cta a {
+      background-color: #852C04;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+    .cards-section {
+      padding: 60px 20px;
+      background-color: #f9f9f9;
+      font-family: 'Poppins', sans-serif;
+      border-radius: 0px 0px 8px 8px;
+    }
+    .cards-section h2 {
+      font-size: 2.5em;
+      color: #370F1E;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .cards-section p {
+      font-size: 1.2em;
+      text-align: center;
+      color: #333;
+      margin-bottom: 60px;
+    }
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      max-width: 360px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    }
+    .card h3 {
+      color: #852C04;
+      font-size: 1.7em;
+      margin-bottom: 15px;
+    }
+    .card ul {
+      margin: 15px 0;
+      padding-left: 20px;
+      list-style: disc;
+    }
+    .card a {
+      display: inline-block;
+      margin-top: 15px;
+      background: #370F1E;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    .card a:hover {
+      background-color: #852C04;
+    }
+    @media (max-width: 768px) {
+      .cta h1 {
+        font-size: 2em;
+      }
+      .cta p {
+        font-size: 1em;
+      }
+      .card {
+        max-width: 100%;
+      }
+    }
+
+    /* Depoimentos */
+    .testimonials {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .testimonials h2 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      color: var(--marrom-escuro);
+      font-size: 1.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonial {
+      font-style: italic;
+      font-family: 'Playfair Display', serif;
+      background: white;
+      padding: 1.5rem 2rem;
+      margin: 0 auto 1.5rem auto;
+      max-width: 720px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      color: var(--marrom-escuro);
+    }
+
+    .testimonial cite {
+      display: block;
+      margin-top: 0.8rem;
+      font-weight: 700;
+      font-style: normal;
+      color: var(--vermelho-terroso);
+    }
+
+    .faq, .certificacao {
+  background-color: #fff;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.faq h2, .certificacao h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.9rem;
+  color: var(--marrom-escuro);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.faq details {
+  margin-bottom: 1rem;
+  border: 1px solid var(--cinza-azulado);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  background-color: var(--bege-claro);
+  cursor: pointer;
+}
+
+.faq summary {
+  font-weight: 600;
+  color: var(--marrom-escuro);
+  font-size: 1.05rem;
+}
+
+.faq details[open] summary {
+  margin-bottom: 0.5rem;
+}
+
+.faq p {
+  margin: 0;
+  color: var(--marrom-escuro);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.certificacao p {
+  text-align: center;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--marrom-escuro);
+}
+
+
+
+    /* Footer */
+    footer {
+      background-color: var(--marrom-escuro);
+      color: var(--bege-claro);
+      padding: 1.5rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    footer p {
+      margin: 0 0 0.5rem 0;
+    }
+
+    .social-links a {
+      color: var(--bege-claro);
+      margin: 0 0.7rem;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--vermelho-terroso);
+    }
+
+    /* Responsividade */
+
+    @media (max-width: 960px) {
+      .about {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about img {
+        max-width: 260px;
+        margin: 0 auto 1.5rem;
+      }
+
+      .benefits ul {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: var(--marrom-escuro);
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        border-radius: 8px;
+        padding: 1rem 2rem;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        width: 180px;
+        z-index: 1001;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">Catarina Abdala</div>
+      <div class="menu-toggle" aria-label="Abrir menu" role="button" tabindex="0">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul>
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#services">Serviços</a></li>
+        <li><a href="#testimonials">Depoimentos</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#certificacao">Certificado</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" aria-label="Apresentação do curso">
+    <h1>Domine o Inglês Jurídico e alavanque sua carreira no Direito</h1>
+    <p>Curso especializado para profissionais e estudantes que querem falar, ler e escrever com segurança no inglês jurídico.</p>
+    <a href="#contact" class="cta-btn" role="button">Quero começar agora</a>
+  </section>
+
+  <main class="container">
+
+    <section id="about" class="about" aria-label="Sobre Catarina Abdala">
+      <img src="img/WhatsApp Image 2025-05-11 at 08.59.47.jpeg" alt="Foto da professora Catarina Abdala" />
+      <div class="about-text">
+        <p>Olá! Meu nome é Catarina Abdala. Sou advogada formada pela PUC Rio e professora de inglês, com certificação da Cambridge University. Estudei Legal English na London School of English e, atualmente, aplico esse conhecimento para ajudar advogados a dominar o inglês jurídico. Já preparei advogados para se apresentarem em conferências internacionais, apresentações em inglês sobre assuntos jurídicos e a conquistarem a confiança necessária para melhor se comunicar no ambiente formal que é um escritório de advocacia!</p>
+      </div>
+    </section>
+
+    <section class="cta">
+    <h1>Conheça meus serviços</h1>
+  </section>
+
+
+    <section id="services" class="cards-section" aria-label="meus cursos">
+      <div class="card-container">
+
+      <div class="card">
+        <h3>👨‍🏫 Aulas Particulares</h3>
+        <p>Personalizadas e adaptadas à sua rotina, com foco prático e direto:</p>
+        <ul>
+          <li>Vocabulário técnico por área de atuação</li>
+          <li>Simulações de calls e reuniões jurídicas</li>
+          <li>Discussão de casos e temas atuais</li>
+          <li>Exercícios de Legal Writing e comunicação</li>
+          <li>Flexibilidade de dias e horários</li>
+        </ul>
+        <a href="#">Quero saber mais</a>
+      </div>
+
+      <div class="card">
+        <h3>📚 Aulão de Contract Law</h3>
+        <p>Curso prático gravado para você aprender no seu ritmo:</p>
+        <ul>
+          <li>5 aulas sobre contratos da Common Law</li>
+          <li>Termos técnicos, estrutura e leitura jurídica</li>
+          <li>Cláusulas principais e técnicas de negociação</li>
+          <li>Material extra para reuniões com clientes</li>
+          <li>Assista onde e quando quiser</li>
+        </ul>
+        <a href="#">Acessar o curso</a>
+      </div>
+
+      <div class="card">
+        <h3>✉️ Quick Guide: Email Profissional</h3>
+        <p>Manual essencial para advogados que se comunicam com clientes internacionais:</p>
+        <ul>
+          <li>Modelos prontos para diferentes situações</li>
+          <li>Frases e vocabulário claro e direto</li>
+          <li>Glossário jurídico em inglês</li>
+          <li>Exemplos de boas práticas</li>
+          <li>Rápido, elegante e eficiente</li>
+        </ul>
+        <a href="#">Ver o Manual</a>
+      </div>
+
+    </div>
+  </section>
+
+    <section id="testimonials" class="testimonials" aria-label="Depoimentos de alunos">
+      <h2>O que dizem meus alunos</h2>
+      <blockquote class="testimonial">
+        "Gostei mt da aula! Foi super leve, o conteúdo era mt bom! A Caca faz tudo parecer simples, com uma didática maravilhosa, uma super simpatia e um brilho no olho. Gostei mt das curiosidades sobre o contrac law nos estados unidos e as comparações com direito brasileiro. A Caca fala tudo com muita propriedade e você consegue perceber que ela de fato se debruçou sobre o tema e estudou a fundo pra passar o melhor pros alunos. Recomendo infinito!"<br />
+        <cite>— Carolline Ribeiro Chaves sobre as aulas particulares</cite>
+      </blockquote>
+      <blockquote class="testimonial">
+        "Aula muito boa. Material bem didático. Excelentes técnicas de ensino. Recomendo para quem deseja aprimorar a escrita e fala."<br />
+        <cite>— Carlos Henrique Duarte Moutinho sobre as aulas particulares</cite>
+      </blockquote>
+      <blockquote class="testimonial">
+        ""Há alguns meses tenho tido aula de inglês com a Catarina, com foco na atuação jurídica.
+
+Além da sua postura super paciente com a aprendizagem, a Catarina apresenta uma didática incrível, envolvendo nas aulas temas de extrema importância e relevância na prática jurídica. Os materiais da aula também são muito funcionais e facilitam todo o processo de estudo! Indicação 10/10."<br />
+        <cite>— Fernanda Sato sobre as Aulas Particulares</cite>
+      </blockquote>
+      <blockquote class="testimonial">
+        "Experiência transformadora!
+
+Estudar Inglês Jurídico com a Catarina foi uma das decisões mais certeiras da minha trajetória profissional. Mesmo sendo um curso 100% online, a qualidade do conteúdo, a didática impecável e a atenção individualizada superaram qualquer experiência presencial que eu já tenha tido.
+
+As aulas são objetivas, ricas em vocabulário técnico e sempre contextualizadas com exemplos reais do universo jurídico. Indico de olhos fechados!"<br />
+        <cite>— Letícia Pedrosa sobre o curso Aulão de Contract Law</cite>
+      </blockquote>
+    </section>
+
+    <section id="faq" class="faq" aria-label="Perguntas frequentes">
+        <h2>Perguntas Frequentes</h2>
+        <details>
+          <summary>Preciso ter inglês avançado para começar o curso?</summary>
+          <p>Não! O curso é feito para quem já tem nível intermediário e deseja aprender o vocabulário jurídico de forma prática.</p>
+        </details>
+        <details>
+          <summary>O curso é 100% online?</summary>
+          <p>Sim. As aulas são gravadas e você pode assistir quando quiser, no seu ritmo.</p>
+        </details>
+        <details>
+          <summary>Por quanto tempo terei acesso ao curso?</summary>
+          <p>Você terá acesso por 12 meses a partir da data da matrícula.</p>
+        </details>
+        <details>
+          <summary>Recebo algum certificado ao final do curso?</summary>
+          <p>Sim! Emitimos certificado digital reconhecendo sua conclusão e carga horária.</p>
+        </details>
+      </section>
+      
+      <section id="certificacao" class="certificacao" aria-label="Informações sobre o certificado">
+        <h2>Certificado de Conclusão</h2>
+        <p>Ao concluir o curso, você receberá um <strong>certificado digital</strong> com carga horária e validação para comprovação de conhecimento em inglês jurídico.</p>
+      </section>
+      
+      
+
+  </main>
+
+  <footer>
+    <p>© 2025 Catarina Abdala - Todos os direitos reservados</p>
+    <div class="social-links" aria-label="Redes sociais">
+      <a href="#" aria-label="Facebook" title="Facebook" target="_blank" rel="noopener">📘</a>
+      <a href="#" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener">📸</a>
+      <a href="#" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener">💼</a>
+    </div>
+  </footer>
+
+  <script>
+    // Menu hamburguer toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navUl = document.querySelector('nav ul');
+
+    menuToggle.addEventListener('click', () => {
+      navUl.classList.toggle('active');
+      if(navUl.classList.contains('active')){
+        menuToggle.setAttribute('aria-label', 'Fechar menu');
+      } else {
+        menuToggle.setAttribute('aria-label', 'Abrir menu');
+      }
+    });
+
+    menuToggle.addEventListener('keydown', (e) => {
+      if(e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        menuToggle.click();
+      }
+    });
+
+    // Fechar menu ao clicar em link (mobile)
+    document.querySelectorAll('nav ul li a').forEach(link => {
+      link.addEventListener('click', () => {
+        if(navUl.classList.contains('active')){
+          navUl.classList.remove('active');
+          menuToggle.setAttribute('aria-label', 'Abrir menu');
+        }
+      });
+    });
+
+    // Validação simples do formulário
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      if(!form.checkValidity()) {
+        alert('Por favor, preencha todos os campos corretamente.');
+        return;
+      }
+
+      submitBtn.textContent = 'Enviando...';
+      submitBtn.disabled = true;
+
+      // Simular envio (exemplo)
+      setTimeout(() => {
+        alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
+        form.reset();
+        submitBtn.textContent = 'Enviar';
+        submitBtn.disabled = false;
+      }, 1500);
+    });
+  </script>
+
+</body>
+</html>

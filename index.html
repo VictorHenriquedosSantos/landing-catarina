@@ -60,7 +60,7 @@
 
     nav .logo {
       font-family: 'Playfair Display', serif;
-      font-style: italic;
+      font-style: normal;
       font-size: 1.8rem;
       font-weight: 700;
       letter-spacing: 2px;
@@ -103,7 +103,7 @@
 
     /* Hero Section */
     .hero {
-      background: linear-gradient(135deg, var(--marrom-escuro) 40%, var(--vermelho-terroso) 100%);
+      background:var(--marrom-escuro) 100%;
       color: var(--bege-claro);
       padding: 4rem 1rem 6rem;
       text-align: center;
@@ -113,7 +113,7 @@
 
     .hero h1 {
       font-family: 'Playfair Display', serif;
-      font-style: italic;
+      font-style: normal;
       font-size: 3rem;
       margin-bottom: 1rem;
       max-width: 700px;
@@ -167,7 +167,7 @@
     .about-text {
       flex: 1;
       font-family: 'Playfair Display', serif;
-      font-style: italic;
+      font-style: normal;
       font-size: 1.15rem;
       color: var(--marrom-escuro);
       line-height: 1.5;
@@ -300,6 +300,25 @@
     .card a:hover {
       background-color: #852C04;
     }
+
+    .contact-cta {
+      text-align: center;
+      margin-top: 60px;
+    }
+    .contact-cta a {
+      display: inline-block;
+      background-color: #852C04;
+      color: white;
+      padding: 14px 32px;
+      font-size: 1rem;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .contact-cta a:hover {
+      background-color: #370F1E;
+    }
+
     @media (max-width: 768px) {
       .cta h1 {
         font-size: 2em;
@@ -327,7 +346,7 @@
     }
 
     .testimonial {
-      font-style: italic;
+      font-style: normal;
       font-family: 'Playfair Display', serif;
       background: white;
       padding: 1.5rem 2rem;
@@ -392,7 +411,7 @@
 .certificacao p {
   text-align: center;
   font-size: 1.1rem;
-  font-style: italic;
+  font-style: normal;
   color: var(--marrom-escuro);
 }
 
@@ -555,8 +574,11 @@
         </ul>
         <a href="#">Ver o Manual</a>
       </div>
-
     </div>
+     <div class="contact-cta">
+      <a href="https://wa.me/5521999999999" target="_blank">Não sabe por onde começar? Fale comigo!</a>
+    </div>
+  </a>
   </section>
 
     <section id="testimonials" class="testimonials" aria-label="Depoimentos de alunos">
@@ -570,7 +592,7 @@
         <cite>— Carlos Henrique Duarte Moutinho sobre as aulas particulares</cite>
       </blockquote>
       <blockquote class="testimonial">
-        ""Há alguns meses tenho tido aula de inglês com a Catarina, com foco na atuação jurídica.
+        "Há alguns meses tenho tido aula de inglês com a Catarina, com foco na atuação jurídica.
 
 Além da sua postura super paciente com a aprendizagem, a Catarina apresenta uma didática incrível, envolvendo nas aulas temas de extrema importância e relevância na prática jurídica. Os materiais da aula também são muito funcionais e facilitam todo o processo de estudo! Indicação 10/10."<br />
         <cite>— Fernanda Sato sobre as Aulas Particulares</cite>
@@ -583,6 +605,11 @@ Estudar Inglês Jurídico com a Catarina foi uma das decisões mais certeiras da
 As aulas são objetivas, ricas em vocabulário técnico e sempre contextualizadas com exemplos reais do universo jurídico. Indico de olhos fechados!"<br />
         <cite>— Letícia Pedrosa sobre o curso Aulão de Contract Law</cite>
       </blockquote>
+    </section>
+
+    <section id="certificacao" class="certificacao" aria-label="Informações sobre o certificado">
+        <h2>Certificado de Conclusão</h2>
+        <p>Ao concluir o curso, você receberá um <strong>certificado digital</strong> com carga horária e validação para comprovação de conhecimento em inglês jurídico.</p>
     </section>
 
     <section id="faq" class="faq" aria-label="Perguntas frequentes">
@@ -605,23 +632,24 @@ As aulas são objetivas, ricas em vocabulário técnico e sempre contextualizada
         </details>
       </section>
       
-      <section id="certificacao" class="certificacao" aria-label="Informações sobre o certificado">
-        <h2>Certificado de Conclusão</h2>
-        <p>Ao concluir o curso, você receberá um <strong>certificado digital</strong> com carga horária e validação para comprovação de conhecimento em inglês jurídico.</p>
-      </section>
-      
       
 
   </main>
 
   <footer>
-    <p>© 2025 Catarina Abdala - Todos os direitos reservados</p>
-    <div class="social-links" aria-label="Redes sociais">
-      <a href="#" aria-label="Facebook" title="Facebook" target="_blank" rel="noopener">📘</a>
-      <a href="#" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener">📸</a>
-      <a href="#" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener">💼</a>
-    </div>
-  </footer>
+  <p>© 2025 Catarina Abdala - Todos os direitos reservados</p>
+
+  <a href="https://wa.me/SEUNUMERO" target="_blank" style="display:inline-block;margin:10px auto;padding:12px 28px;background-color:#852C04;color:#fff;border-radius:6px;font-weight:600;font-size:1rem;text-decoration:none;transition:background-color 0.3s ease;">
+    Ficou com alguma dúvida? Fale comigo!
+  </a>
+
+  <div class="social-links" aria-label="Redes sociais">
+    <a href="#" aria-label="Facebook" title="Facebook" target="_blank" rel="noopener">📘</a>
+    <a href="#" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener">📸</a>
+    <a href="#" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener">💼</a>
+  </div>
+</footer>
+
 
   <script>
     // Menu hamburguer toggle

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <title>Catarina Abdala - Inglês Jurídico</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Poppins:wght@400;700&display=swap');
@@ -103,30 +104,28 @@
 
     /* Hero Section */
     .hero {
-      background:var(--marrom-escuro) 100%;
-      color: var(--bege-claro);
-      padding: 4rem 1rem 6rem;
-      text-align: center;
-      border-radius: 0 0 60% 60% / 0 0 10% 10%;
-      margin-bottom: 3rem;
+      background-color: #370F1E;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 1rem;
+      gap: 2rem;
     }
-
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-style: normal;
-      font-size: 3rem;
+    .hero-text {
+      flex: 1;
+      min-width: 280px;
+      max-width: 500px;
+    }
+    .hero-text h1 {
+      color: #F4EADB;
+      font-size: 2rem;
       margin-bottom: 1rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.1;
     }
-
-    .hero p {
-      font-weight: 600;
-      font-size: 1.3rem;
-      max-width: 600px;
-      margin: 0 auto 2.5rem;
+    .hero-text p {
+      color: #F4EADB;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
     }
 
     .hero a.cta-btn {
@@ -147,6 +146,27 @@
       box-shadow: 0 8px 20px rgba(133, 44, 4, 0.9);
     }
 
+    .hero-image {
+      flex: 1;
+      min-width: 280px;
+      max-width: 500px;
+    }
+    .hero-image img {
+      width: 50%;
+      height: auto;
+      border-radius: 12px;
+      margin-left: 150px;
+    }
+
+     @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-image {
+        display: none;
+      }
+    }
     /* Sobre a professora */
     .about {
       display: flex;
@@ -281,6 +301,7 @@
       color: #852C04;
       font-size: 1.7em;
       margin-bottom: 15px;
+      text-align: center;
     }
     .card ul {
       margin: 15px 0;
@@ -514,9 +535,14 @@
   </header>
 
   <section class="hero" aria-label="Apresentação do curso">
-    <h1>Domine o Inglês Jurídico e alavanque sua carreira no Direito</h1>
-    <p>Curso especializado para profissionais e estudantes que querem falar, ler e escrever com segurança no inglês jurídico.</p>
-    <a href="#contact" class="cta-btn" role="button">Quero começar agora</a>
+    <div class="hero-text">
+      <h1>Domine o Inglês Jurídico e alavanque sua carreira no Direito</h1>
+      <p>Curso especializado para profissionais e estudantes que querem falar, ler e escrever com segurança no inglês jurídico.</p>
+      <a href="https://wa.me/5521981077120" target="_blank" class="cta-btn" role="button">Quero começar agora</a>
+    </div>
+    <div class="hero-image">
+      <img src="img/mulher-sorridente-trabalhando-no-laptop.jpg" alt="Mulher sorridente mulher-sorridente-trabalhando-no-laptop" />
+    </div>
   </section>
 
   <main class="container">
@@ -537,7 +563,7 @@
       <div class="card-container">
 
       <div class="card">
-        <h3>👨‍🏫 Aulas Particulares</h3>
+        <h3>Aulas Particulares</h3>
         <p>Personalizadas e adaptadas à sua rotina, com foco prático e direto:</p>
         <ul>
           <li>Vocabulário técnico por área de atuação</li>
@@ -546,11 +572,11 @@
           <li>Exercícios de Legal Writing e comunicação</li>
           <li>Flexibilidade de dias e horários</li>
         </ul>
-        <a href="#">Quero saber mais</a>
+        <a href="https://wa.me/5521981077120" target="_blank">Quero saber mais</a>
       </div>
 
       <div class="card">
-        <h3>📚 Aulão de Contract Law</h3>
+        <h3>Aulão de Contract Law</h3>
         <p>Curso prático gravado para você aprender no seu ritmo:</p>
         <ul>
           <li>5 aulas sobre contratos da Common Law</li>
@@ -559,11 +585,11 @@
           <li>Material extra para reuniões com clientes</li>
           <li>Assista onde e quando quiser</li>
         </ul>
-        <a href="#">Acessar o curso</a>
+        <a href="https://pay.kiwify.com.br/SZYajMT?coupon=AULAO10" target="_blank">Acessar o curso</a>
       </div>
 
       <div class="card">
-        <h3>✉️ Quick Guide: Email Profissional</h3>
+        <h3>Quick Guide: Email Profissional</h3>
         <p>Manual essencial para advogados que se comunicam com clientes internacionais:</p>
         <ul>
           <li>Modelos prontos para diferentes situações</li>
@@ -572,7 +598,7 @@
           <li>Exemplos de boas práticas</li>
           <li>Rápido, elegante e eficiente</li>
         </ul>
-        <a href="#">Ver o Manual</a>
+        <a href="https://pay.kiwify.com.br/XBOq6YU" target="_blank">Ver o Manual</a>
       </div>
     </div>
      <div class="contact-cta">
@@ -639,14 +665,16 @@ As aulas são objetivas, ricas em vocabulário técnico e sempre contextualizada
   <footer>
   <p>© 2025 Catarina Abdala - Todos os direitos reservados</p>
 
-  <a href="https://wa.me/SEUNUMERO" target="_blank" style="display:inline-block;margin:10px auto;padding:12px 28px;background-color:#852C04;color:#fff;border-radius:6px;font-weight:600;font-size:1rem;text-decoration:none;transition:background-color 0.3s ease;">
+  <a href="https://wa.me/5521981077120" target="_blank" style="display:inline-block;margin:10px auto;padding:12px 28px;background-color:#852C04;color:#fff;border-radius:6px;font-weight:600;font-size:1rem;text-decoration:none;transition:background-color 0.3s ease;">
     Ficou com alguma dúvida? Fale comigo!
   </a>
 
   <div class="social-links" aria-label="Redes sociais">
-    <a href="#" aria-label="Facebook" title="Facebook" target="_blank" rel="noopener">📘</a>
-    <a href="#" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener">📸</a>
-    <a href="#" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener">💼</a>
+    <a href="https://www.facebook.com/catarina.abdala/?locale=pt_BR" aria-label="Facebook" title="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/catarinaabdala/" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+    
+
+
   </div>
 </footer>
 
